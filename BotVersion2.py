@@ -10,29 +10,34 @@ token = os.getenv('DISCORD_TOKEN')
 client = commands.Bot(command_prefix = ".")
 status = cycle(['Pubg PC','GTA VI','God of War 4'])
 
+#Echo @ start
 @client.event
 async def on_ready():
 	change_status.start()
 	# await client.change_presence(status=discord.Status.idle,activity=discord.Game('Hello Boi !!'))
 	print("Bot is ready")
 
+#Rich presence 
 @tasks.loop(seconds=10)
 async def change_status():
 	 await client.change_presence(activity=discord.Game(next(status)))
 
-
+#Member join notification
 @client.event
 async def on_member_join(member):
 	print(f'{member} has joined a server.')
 
+#Member leave notification
 @client.event
 async def on_member_remove(member):
 	print(f'{member} has left  server.')
 
+#PING command
 @client.command()
 async def ping(ctx):
 	await ctx.send(f'Pong! {round(client.latency * 1000)}ms')
 
+#8Ball
 @client.command(aliases=['8ball','test'])
 async def _8ball(ctx, *, question):
 	responses = ['It is certain.',
@@ -62,7 +67,7 @@ async def on_command_error(ctx,error):
 	if isinstance(error,commands.CommandNotFound):
 		await ctx.send('Invalid command for help use .help !!')
 
-
+#clear 
 @client.command()
 @commands.has_permissions(manage_messages=True)#check user has a permission to delete
 async def clear(ctx,amount : int):
@@ -74,25 +79,27 @@ def is_it_me(ctx):
 #custom check
 @client.command()
 @commands.check(is_it_me)
-async def example():
+async def example(ctx):
 	await ctx.send(f'Hi I m {ctx.author}')
 
 @clear.error
 async def clear_error(ctx,error):
 	if isinstance(error,commands.MissingRequiredArgument):
-		await ctx.send('Abe argument to daal !!')
+		await ctx.send('Need an argument')
 
-
+#Kick member
 @client.command()
 async def kick(ctx,member : discord.Member,*,reason=None):
 	await member.kick(reason=reason)
 	await ctx.send(f'Kicked {member.mention}')
 
+#Ban member
 @client.command()
 async def ban(ctx,member : discord.Member,*,reason=None):
 	await member.ban(reason=reason)
 	await ctx.send(f'Banned {member.mention}')
 
+#unban member
 @client.command()
 async def unban(ctx,*,member):
 	banned_users = await ctx.guild.bans()
