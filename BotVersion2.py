@@ -17,7 +17,7 @@ async def on_ready():
 	# await client.change_presence(status=discord.Status.idle,activity=discord.Game('Hello Boi !!'))
 	print("Bot is ready")
 
-#Rich presence 
+#Status 
 @tasks.loop(seconds=10)
 async def change_status():
 	 await client.change_presence(activity=discord.Game(next(status)))
