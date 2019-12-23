@@ -1,10 +1,12 @@
-import discord
-import os
-import random
+import os, random, discord
 from discord.ext import commands,tasks
 from itertools import cycle
+from dotenv import load_dotenv
 
-token = "NjU4MTc0MzI4NzkzMzMzNzYw.Xf7-bw.e6GWc_8NtP6HzrJcR83GRD3Zj70"
+#Storing API keys safely.
+load_dotenv()
+token = os.getenv('DISCORD_TOKEN')
+
 client = commands.Bot(command_prefix = ".")
 status = cycle(['Pubg PC','GTA VI','God of War 4'])
 
