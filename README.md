@@ -1,5 +1,5 @@
 # DiscordBot
-[![HitCount](http://hits.dwyl.com/NarutoOp/DiscordBot.svg)](http://hits.dwyl.com/NarutoOp/DiscordBot)
+[![HitCount](http://hits.dwyl.com/NarutoOp/DiscordBot.svg)](http://hits.dwyl.com/NarutoOp/DiscordBot)   [![Generic badge](https://img.shields.io/badge/Arpit-Gupta-1abc9c.svg)](https://github.com/NarutoOp)
 
 My first discord bot.
 
