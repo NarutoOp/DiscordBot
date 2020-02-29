@@ -1,4 +1,6 @@
 # DiscordBot
+[![HitCount](http://hits.dwyl.com/NarutoOp/Crop-Recommendation.svg)](http://hits.dwyl.com/NarutoOp/Crop-Recommendation)
+
 My first discord bot.
 
 ## Installation
