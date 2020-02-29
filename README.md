@@ -1,5 +1,5 @@
 # DiscordBot
-[![HitCount](http://hits.dwyl.com/NarutoOp/Crop-Recommendation.svg)](http://hits.dwyl.com/NarutoOp/Crop-Recommendation)
+[![HitCount](http://hits.dwyl.com/NarutoOp/DiscordBot.svg)](http://hits.dwyl.com/NarutoOp/DiscordBot)
 
 My first discord bot.
 
